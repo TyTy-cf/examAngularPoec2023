@@ -1,22 +1,11 @@
 
-<ng-container *ngIf="iRegion && iDepartment">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a routerLink="/">
-          Region
-        </a>
-      </li>
-      <li class="breadcrumb-item">
-        <a routerLink="/regions/{{iRegion.code}}/departments">
-          Départements - {{iRegion.nom}}
-        </a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page">
-        Communes - {{iDepartment.nom}}
-      </li>
-    </ol>
-  </nav>
+<app-breadcrumb
+  [iRegion]="iRegion"
+  [iDepartment]="iDepartment"
+>
+</app-breadcrumb>
+
+<ng-container *ngIf="iDepartment">
   <table class="table table-striped">
     <thead>
     <tr>

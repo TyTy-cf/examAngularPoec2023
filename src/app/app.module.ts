@@ -7,13 +7,15 @@ import { RegionComponent } from './region/region.component';
 import { DepartmentComponent } from './department/department.component';
 import { CitiesComponent } from './cities/cities.component';
 import {HttpClientModule} from "@angular/common/http";
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegionComponent,
     DepartmentComponent,
-    CitiesComponent
+    CitiesComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

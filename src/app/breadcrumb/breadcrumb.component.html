@@ -1,0 +1,24 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" [class.active]="!iRegion">
+      <ng-container *ngIf="!iRegion && router.url !== '/departments'">
+        Régions
+      </ng-container>
+      <a routerLink="/" *ngIf="iRegion || router.url === '/departments'">
+        Région
+      </a>
+    </li>
+    <li class="breadcrumb-item active" *ngIf="iRegion && !iDepartment">
+      Départements - {{iRegion.nom}}
+    </li>
+    <li class="breadcrumb-item" *ngIf="iRegion && iDepartment">
+      <a routerLink="/regions/{{iRegion.code}}/departments">
+        Départements - {{iRegion.nom}}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page" *ngIf="iDepartment">
+      Communes - {{iDepartment.nom}}
+    </li>
+  </ol>
+</nav>

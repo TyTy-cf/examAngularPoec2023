@@ -1,12 +1,5 @@
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/">Region</a></li>
-      <li class="breadcrumb-item active" aria-current="page" *ngIf="iRegion">
-        Départements - {{iRegion.nom}}
-      </li>
-  </ol>
-</nav>
+<app-breadcrumb [iRegion]="iRegion"></app-breadcrumb>
 
 <button class="btn btn-dark" routerLink="/departments" *ngIf="iRegion">
   Voir tous les départements
