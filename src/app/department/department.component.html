@@ -1,0 +1,30 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Region</a></li>
+      <li class="breadcrumb-item active" aria-current="page" *ngIf="iRegion">
+        Départements - {{iRegion.nom}}
+      </li>
+  </ol>
+</nav>
+
+<button class="btn btn-dark" routerLink="/departments" *ngIf="iRegion">
+  Voir tous les départements
+</button>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Code</th>
+    <th>Code region</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let department of iDepartments" routerLink="/regions/{{department.codeRegion}}/departments/{{department.code}}/cities" class="router-link">
+    <td>{{department.nom}}</td>
+    <td>{{department.code}}</td>
+    <td>{{department.codeRegion}}</td>
+  </tr>
+  </tbody>
+</table>

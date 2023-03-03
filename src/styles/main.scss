@@ -1,0 +1,12 @@
+
+body {
+  background-color: antiquewhite;
+}
+
+.router-link {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

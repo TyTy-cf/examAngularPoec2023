@@ -1,0 +1,40 @@
+
+<ng-container *ngIf="iRegion && iDepartment">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">
+          Region
+        </a>
+      </li>
+      <li class="breadcrumb-item">
+        <a routerLink="/regions/{{iRegion.code}}/departments">
+          Départements - {{iRegion.nom}}
+        </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Communes - {{iDepartment.nom}}
+      </li>
+    </ol>
+  </nav>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Code</th>
+      <th>Département</th>
+      <th>Codes postaux</th>
+      <th>Population</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let city of iCites">
+      <td>{{city.nom}}</td>
+      <td>{{city.code}}</td>
+      <td>{{iDepartment.nom}}</td>
+      <td>{{city.codesPostaux}}</td>
+      <td>{{city.population}}</td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
